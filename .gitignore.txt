@@ -1,0 +1,5 @@
+target/
+.netbeans_automatic_build
+nbactions.xml
+nb-configuration.xml
+*.class
