@@ -11,11 +11,13 @@ public class BillingService {
     private static final double CONSULTATION_FEE = 500.0;
     private static final Map<String, Double> TREATMENT_PRICES = new HashMap<>();
 
-    static {
+static {
         TREATMENT_PRICES.put("clean", 1500.0);
+        TREATMENT_PRICES.put("cleaning", 1500.0); 
         TREATMENT_PRICES.put("filling", 3000.0);
         TREATMENT_PRICES.put("extraction", 4000.0);
         TREATMENT_PRICES.put("root canal", 8000.0);
+        TREATMENT_PRICES.put("braces", 5000.0);   
         TREATMENT_PRICES.put("checkup", 500.0);
     }
 
