@@ -17,11 +17,24 @@ public class DisplayForm extends javax.swing.JFrame {
      */
     public DisplayForm() {
         initComponents();
+        setupEmptyTable();
     }
     
     public DisplayForm(String role) {
     initComponents();
     this.role = role;
+    setupEmptyTable();
+}
+    
+    private void setupEmptyTable() {
+    javax.swing.table.DefaultTableModel emptyModel = new javax.swing.table.DefaultTableModel(
+            new Object[]{"Field", "Value"}, 0) {
+        @Override
+        public boolean isCellEditable(int row, int col) {
+            return false;
+        }
+    };
+    tblAppointmentDetails.setModel(emptyModel);
 }
 
     /**
@@ -36,14 +49,9 @@ public class DisplayForm extends javax.swing.JFrame {
         lable1 = new javax.swing.JLabel();
         btnSearch = new javax.swing.JButton();
         txtSearchNumber = new javax.swing.JTextField();
-        lblPatientName = new javax.swing.JLabel();
-        lblAddress = new javax.swing.JLabel();
-        lblContactNumber = new javax.swing.JLabel();
-        lblDentistName = new javax.swing.JLabel();
-        lblDate = new javax.swing.JLabel();
-        lblTreatmentType = new javax.swing.JLabel();
-        lblTime = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblAppointmentDetails = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,20 +72,6 @@ public class DisplayForm extends javax.swing.JFrame {
             }
         });
 
-        lblPatientName.setText("..");
-
-        lblAddress.setText("..");
-
-        lblContactNumber.setText("..");
-
-        lblDentistName.setText("..");
-
-        lblDate.setText("..");
-
-        lblTreatmentType.setText("..");
-
-        lblTime.setText("..");
-
         btnBack.setText("Back to Menu");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,41 +79,41 @@ public class DisplayForm extends javax.swing.JFrame {
             }
         });
 
+        tblAppointmentDetails.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblAppointmentDetails);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtSearchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(27, 27, 27)
+                        .addComponent(txtSearchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblDentistName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(lblTreatmentType, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnBack))
-                        .addContainerGap(14, Short.MAX_VALUE))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(121, 121, 121)
+                            .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(121, 121, 121))))
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBack)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,28 +124,19 @@ public class DisplayForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearch)
                     .addComponent(txtSearchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPatientName)
-                    .addComponent(lblAddress)
-                    .addComponent(lblContactNumber))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDentistName)
-                    .addComponent(lblDate)
-                    .addComponent(lblTreatmentType))
-                .addGap(26, 26, 26)
-                .addComponent(lblTime)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(59, 59, 59)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(btnBack)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        
+                                           
+    
     String searchNumber = txtSearchNumber.getText().trim();
 
     if (searchNumber.isEmpty()) {
@@ -162,25 +147,29 @@ public class DisplayForm extends javax.swing.JFrame {
     dao.AppointmentDAO dao = new dao.AppointmentDAO();
     model.Appointment appointment = dao.getAppointmentByNumber(searchNumber);
 
+    javax.swing.table.DefaultTableModel tableModel = new javax.swing.table.DefaultTableModel(
+            new Object[]{"Field", "Value"}, 0) {
+        @Override
+        public boolean isCellEditable(int row, int col) {
+            return false;
+        }
+    };
+
     if (appointment != null) {
-        lblPatientName.setText(appointment.getPatientName());
-        lblAddress.setText(appointment.getAddress());
-        lblContactNumber.setText(appointment.getContactNumber());
-        lblDentistName.setText(appointment.getDentistName());
-        lblTreatmentType.setText(appointment.getTreatmentType());
-        lblDate.setText(appointment.getAppointmentDate());
-        lblTime.setText(appointment.getAppointmentTime());
+        tableModel.addRow(new Object[]{"Appointment Number", appointment.getAppointmentNumber()});
+        tableModel.addRow(new Object[]{"Patient Name", appointment.getPatientName()});
+        tableModel.addRow(new Object[]{"Address", appointment.getAddress()});
+        tableModel.addRow(new Object[]{"Contact Number", appointment.getContactNumber()});
+        tableModel.addRow(new Object[]{"Dentist", appointment.getDentistName()});
+        tableModel.addRow(new Object[]{"Treatment", appointment.getTreatmentType()});
+        tableModel.addRow(new Object[]{"Date", appointment.getAppointmentDate()});
+        tableModel.addRow(new Object[]{"Time", appointment.getAppointmentTime()});
     } else {
         javax.swing.JOptionPane.showMessageDialog(this, "No appointment found with that number.", "Not Found", javax.swing.JOptionPane.WARNING_MESSAGE);
-        // clear old results
-        lblPatientName.setText("");
-        lblAddress.setText("");
-        lblContactNumber.setText("");
-        lblDentistName.setText("");
-        lblTreatmentType.setText("");
-        lblDate.setText("");
-        lblTime.setText("");
     }
+
+    tblAppointmentDetails.setModel(tableModel);
+
 
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -236,14 +225,9 @@ public class DisplayForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lable1;
-    private javax.swing.JLabel lblAddress;
-    private javax.swing.JLabel lblContactNumber;
-    private javax.swing.JLabel lblDate;
-    private javax.swing.JLabel lblDentistName;
-    private javax.swing.JLabel lblPatientName;
-    private javax.swing.JLabel lblTime;
-    private javax.swing.JLabel lblTreatmentType;
+    private javax.swing.JTable tblAppointmentDetails;
     private javax.swing.JTextField txtSearchNumber;
     // End of variables declaration//GEN-END:variables
 }
