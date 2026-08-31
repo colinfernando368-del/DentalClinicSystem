@@ -74,4 +74,27 @@ public class AppointmentDAO {
         }
         return null;
     }
+    
+    public java.util.List<Appointment> getAllAppointments() {
+    java.util.List<Appointment> appointments = new java.util.ArrayList<>();
+    String sql = "SELECT * FROM appointments";
+    try (PreparedStatement ps = DBConnection.getInstance().prepareStatement(sql)) {
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            appointments.add(new Appointment(
+                rs.getString("appointment_number"),
+                rs.getString("patient_name"),
+                rs.getString("address"),
+                rs.getString("contact_number"),
+                rs.getString("dentist_name"),
+                rs.getString("treatment_type"),
+                rs.getString("appointment_date"),
+                rs.getString("appointment_time")
+            ));
+        }
+    } catch (SQLException e) {
+        System.out.println("Fetch all failed: " + e.getMessage());
+    }
+    return appointments;
+}
 }

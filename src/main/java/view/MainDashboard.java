@@ -35,6 +35,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
+        btnReports = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,7 +90,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 315, 115, 36));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 120, 40));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 76, 679, 10));
 
         jEditorPane1.setBackground(new java.awt.Color(0, 153, 0));
@@ -97,8 +98,17 @@ public class MainDashboard extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 369, 679, 43));
 
+        btnReports.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        btnReports.setText("Reports");
+        btnReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 120, 40));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ai-generated-dental-clinic-advertisment-background-with-copy-space-free-photo.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 370));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +141,11 @@ public class MainDashboard extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
+        new AllAppointmentsReport().setVisible(true);
+
+    }//GEN-LAST:event_btnReportsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +188,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnReports;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
