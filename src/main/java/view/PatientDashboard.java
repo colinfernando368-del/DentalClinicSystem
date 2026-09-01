@@ -38,11 +38,14 @@ public PatientDashboard(String contactNumber) {
         btnPatientBill = new javax.swing.JButton();
         btnPatientLogout = new javax.swing.JButton();
         btnPatientExit = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel1.setText("PATIENT DASHBOARD");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 20, 231, -1));
 
         btnPatientDisplay.setText("Display Appointment");
         btnPatientDisplay.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +53,7 @@ public PatientDashboard(String contactNumber) {
                 btnPatientDisplayActionPerformed(evt);
             }
         });
+        getContentPane().add(btnPatientDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 91, 188, 60));
 
         btnPatientBill.setText("View Bill");
         btnPatientBill.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +61,7 @@ public PatientDashboard(String contactNumber) {
                 btnPatientBillActionPerformed(evt);
             }
         });
+        getContentPane().add(btnPatientBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 169, 188, 60));
 
         btnPatientLogout.setText("Logout");
         btnPatientLogout.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +69,7 @@ public PatientDashboard(String contactNumber) {
                 btnPatientLogoutActionPerformed(evt);
             }
         });
+        getContentPane().add(btnPatientLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 277, 108, 36));
 
         btnPatientExit.setText("Exit");
         btnPatientExit.addActionListener(new java.awt.event.ActionListener() {
@@ -71,43 +77,10 @@ public PatientDashboard(String contactNumber) {
                 btnPatientExitActionPerformed(evt);
             }
         });
+        getContentPane().add(btnPatientExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 275, 114, 39));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(btnPatientExit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPatientLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPatientBill, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPatientDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(49, 49, 49)
-                .addComponent(btnPatientDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPatientBill, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPatientLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPatientExit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abstract-blur-hospital-clinic-interior-background_43963-2617.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -202,5 +175,6 @@ public PatientDashboard(String contactNumber) {
     private javax.swing.JButton btnPatientExit;
     private javax.swing.JButton btnPatientLogout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
