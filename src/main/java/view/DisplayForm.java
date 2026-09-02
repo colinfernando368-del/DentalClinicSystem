@@ -52,11 +52,14 @@ public class DisplayForm extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAppointmentDetails = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lable1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         lable1.setText("Enter Appointment Number");
+        getContentPane().add(lable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 230, 40));
 
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSearch.setText("Search");
@@ -65,12 +68,14 @@ public class DisplayForm extends javax.swing.JFrame {
                 btnSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 98, 120, -1));
 
         txtSearchNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchNumberActionPerformed(evt);
             }
         });
+        getContentPane().add(txtSearchNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 98, 174, -1));
 
         btnBack.setText("Back to Menu");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +83,7 @@ public class DisplayForm extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 408, -1, -1));
 
         tblAppointmentDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,44 +98,10 @@ public class DisplayForm extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblAppointmentDetails);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(txtSearchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(121, 121, 121)
-                            .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(121, 121, 121))))
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBack)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lable1)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(txtSearchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(btnBack)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 180, 357, 185));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abstract-blur-hospital-clinic-interior-background_43963-2617.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +197,7 @@ public class DisplayForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lable1;
     private javax.swing.JTable tblAppointmentDetails;

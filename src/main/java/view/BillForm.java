@@ -78,7 +78,7 @@ public class BillForm extends javax.swing.JFrame {
         txtReceipt.setRows(5);
         jScrollPane1.setViewportView(txtReceipt);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 193, 247, 253));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 193, 220, 253));
 
         btnPrint.setText("Print");
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
